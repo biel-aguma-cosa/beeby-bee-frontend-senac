@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beb&ecirc; Abeia</title>
+
+    <!--
+    colors:
+
+    BG - #C2C1FF
+
+    SH - #000DFF
+    TI - #7F95FF
+    HL - #DCDCFF
+
+    Y  - #FFF200
+    O  - #FFC90E
+    B  - #000000
+    
+    -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            outline: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            font-family: monospace;
+            font-size: 16px;
+            height: 100%;
+        }
+        body {
+            background-color: magenta;
+        }
+        #wrap {
+            display: flex;
+            flex-direction: column;
+
+            background-color: #C2C1FF;
+            border-radius: .1rem;
+            height: 100%;
+        }
+        #wrap > header {
+            display: flex;
+            align-items: center;
+            background-color: #FFC90E;
+            border: .5rem solid #FFF200;
+            border-top-left-radius: .2rem;
+            border-top-right-radius: .2rem;
+            padding: 1rem;
+        }
+        header img {
+            width: 6rem;
+            margin: 0 1rem 0 0;
+        }
+        header h1 {
+            font-family: 'Courier New', Courier, monospace;
+            color: #7F95FF;
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        #wrap > nav {
+            display: flex;
+            flex-direction: row;
+
+            justify-content: center;
+
+            gap: .5rem;
+
+            background-color: #000DFF;
+            padding: 1rem;
+        }
+        #wrap > nav > a {
+            text-decoration: none;
+            
+            padding: .3rem .8rem .3rem .8rem;
+            border-radius: 1rem;
+
+            background-color: #FFC90E;
+            color: #000DFF;
+        }
+        #wrap > nav > a > span {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #wrap > main {
+            display: flex;
+            flex-direction: column;
+
+            background-color: green;
+            flex-grow: 1;
+        }
+        #wrap > main > article {
+            background-color: yellow;
+            padding: 2rem;
+            flex-grow: 1;
+        }
+        #wrap > main > article > p {
+            margin-bottom: 1rem;
+        }
+        #wrap > main > aside {
+            background-color: cyan;
+            padding: 1rem;
+        }
+
+        #wrap > footer {
+            background-color: blue;
+        }
+
+        @media screen and (min-width: 768px)  {
+            #wrap > main {
+            flex-direction: row;
+            }
+            #wrap > main > aside {
+                flex-basis: 220px;
+                flex-shrink: 0;
+            }
+            #wrap > nav {
+                justify-content: left;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <img src="honey-logo.png" alt="sei lá é uma logo">
+            <h1>Beeby Bee</h1>
+        </header>
+        <nav>
+            <a href="/"><span><i class="fa-solid fa-house"></i>In&iacute;cio</span></a>
+            <a href="/"><span><i class="fa-solid fa-clipboard-list"></i>Lista</span></a>
+            <a href="/"><span><i class="fa-solid fa-bug"></i>Contato</span></a>
+        </nav>
+        <main>
+            <article>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, consequatur officiis, similique ipsam animi temporibus ea neque reprehenderit sit blanditiis saepe facere repellendus ducimus possimus, nam pariatur corrupti commodi vitae.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error facilis ipsa cum voluptatibus ipsum omnis ullam unde saepe culpa amet id molestias quaerat cumque temporibus, voluptate alias quam autem a?
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dolor, officiis accusantium pariatur sit esse ipsa hic deleniti nihil nobis quae odit reiciendis, consectetur ut modi reprehenderit rerum odio culpa!
+                </p>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam ducimus tempore fugiat, soluta quis pariatur mollitia consequatur nulla distinctio vitae ab aliquam et repudiandae harum iste dignissimos. Dolorem, eos atque?
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ab nulla quaerat iste. At esse cum perspiciatis, recusandae sed autem illo nulla ratione error molestiae. Vel esse aspernatur accusantium ea!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae natus beatae qui officia, nemo impedit harum asperiores distinctio facilis rem temporibus tenetur hic minima tempora consectetur eveniet, nihil dolor autem.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas asperiores alias expedita voluptatibus labore optio earum, cum, consequuntur similique quis neque harum aspernatur veritatis sunt nemo qui? Ipsa, fugit veritatis?
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas praesentium cumque dolorum illo dicta. Iure laborum voluptates quod officia, assumenda beatae? Impedit sit, veritatis ut quis quos omnis assumenda tempora!
+                </p>
+
+            </article>
+            <aside>
+                <header>Conte&uacute;do Extra</header>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore tenetur unde commodi, labore, nihil fugiat similique, vero rem dolorem natus fugit doloribus quo. Veritatis iusto dolores nesciunt veniam molestiae quam.
+            </aside>
+        </main>
+        <footer>
+            lorem ipsum dolor
+        </footer>
+    </div>
+</body>
+</html>
