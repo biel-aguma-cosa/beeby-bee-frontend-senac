@@ -20,9 +20,10 @@
     
     -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-
     <style>
+
+        @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css);
+
         * {
             box-sizing: border-box;
             outline: none;
@@ -35,6 +36,12 @@
             font-size: 16px;
             height: 100%;
         }
+
+        a {
+            color: red;
+            text-decoration: none;
+        }
+
         body {
             background-color: magenta;
         }
@@ -49,6 +56,7 @@
         #wrap > header {
             display: flex;
             align-items: center;
+
             background-color: #FFC90E;
             border: .5rem solid #FFF200;
             border-top-left-radius: .2rem;
@@ -60,7 +68,7 @@
             margin: 0 1rem 0 0;
         }
         header h1 {
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             color: #7F95FF;
             font-size: 3rem;
             margin: 0;
@@ -75,32 +83,40 @@
             gap: .5rem;
 
             background-color: #000DFF;
-            padding: 1rem;
+            padding: .5rem;
         }
         #wrap > nav > a {
             text-decoration: none;
             
-            padding: .3rem .8rem .3rem .8rem;
-            border-radius: 1rem;
+            padding: .5rem;
+            border-radius: .4rem;
 
             background-color: #FFC90E;
             color: #000DFF;
         }
-        #wrap > nav > a > span {
+        #wrap > nav > a:hover {
+            transition: .2s;
+            background-color: #FFF200;
+            color: #7F95FF;
+        }
+        #wrap > nav span {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
+        }
+        #wrap > nav span.nbsp {
+            display: inline;
         }
 
         #wrap > main {
             display: flex;
             flex-direction: column;
 
-            background-color: green;
+            background-color: #000DFF;
             flex-grow: 1;
         }
         #wrap > main > article {
-            background-color: yellow;
+            background-color: #FFF200;
             padding: 2rem;
             flex-grow: 1;
         }
@@ -108,12 +124,32 @@
             margin-bottom: 1rem;
         }
         #wrap > main > aside {
-            background-color: cyan;
+            background-color: #FFC90E;
             padding: 1rem;
+
+            border-width: .1rem .0rem .0rem .0rem;
+            border-style: solid;
+            border-color: #7F95FF;
         }
 
         #wrap > footer {
-            background-color: blue;
+            padding-left: 2rem;
+            color: #C2C1FF;
+            background-color: #000DFF;
+        }
+
+        @media screen and (max-width: 416px) {
+            #wrap > nav > a {
+                padding: .5rem;
+            }
+            #wrap > nav span {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            #wrap > nav span.nbsp {
+                display: none;
+            }
         }
 
         @media screen and (min-width: 768px)  {
@@ -124,23 +160,41 @@
                 flex-basis: 220px;
                 flex-shrink: 0;
             }
+            #wrap > main > aside {
+                border-width: .0rem .0rem .0rem .1rem;
+                border-style: solid;
+                border-color: #7F95FF;
+            }
             #wrap > nav {
-                justify-content: left;
+                flex-direction: row;
+                justify-content: right;
+            }
+            #wrap > nav > a {
+                padding: .6rem;
+            }
+            #wrap > nav > a.second {
+                margin-right: auto;
             }
         }
 
     </style>
 </head>
+
 <body>
     <div id="wrap">
         <header>
-            <img src="honey-logo.png" alt="sei lá é uma logo">
-            <h1>Beeby Bee</h1>
+            <a href="/">
+                <img src="honey-logo.png" alt="sei lá é uma logo">
+            </a>
+            <a href="/">
+                <h1>Beebz Bee</h1>
+            </a>
         </header>
         <nav>
-            <a href="/"><span><i class="fa-solid fa-house"></i>In&iacute;cio</span></a>
-            <a href="/"><span><i class="fa-solid fa-clipboard-list"></i>Lista</span></a>
-            <a href="/"><span><i class="fa-solid fa-bug"></i>Contato</span></a>
+            <a href="/"><span><i class="fa-solid fa-house"></i><span class="nbsp">&nbsp;</span>In&iacute;cio</span></a>
+            <a href="/" class="second"><span><i class="fa-solid fa-circle-info"></i><span class="nbsp">&nbsp;</span>Sobre</span></a>
+            <a href="/"><span><i class="fa-solid fa-clipboard-list"></i><span class="nbsp">&nbsp;</span>Lista</span></a>
+            <a href="/"><span><i class="fa-solid fa-envelope"></i><span class="nbsp">&nbsp;</span>Contato</span></a>
         </nav>
         <main>
             <article>
@@ -176,7 +230,7 @@
             </aside>
         </main>
         <footer>
-            lorem ipsum dolor
+            &copy; lorem ipsum dolor
         </footer>
     </div>
 </body>
