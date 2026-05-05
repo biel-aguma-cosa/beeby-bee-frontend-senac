@@ -57,21 +57,79 @@
             display: flex;
             align-items: center;
 
+            flex-direction: column;
+
             background-color: #FFC90E;
             border: .5rem solid #FFF200;
             border-top-left-radius: .2rem;
             border-top-right-radius: .2rem;
             padding: 1rem;
         }
-        header img {
+        #wrap > header > div {
+            display: flex;
+            align-items: center;
+
+            flex-direction: row;
+        }
+        #wrap > header img {
             width: 6rem;
             margin: 0 1rem 0 0;
         }
-        header h1 {
+        #wrap > header h1 {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            color: #7F95FF;
+            color: #000DFF;
             font-size: 3rem;
             margin: 0;
+        }
+
+        .search-bar {
+            display: flex;
+            flex-direction: row;
+            flex-shrink: 1;
+            width: 100%;
+            
+            justify-content: right;
+            
+        }
+
+        .search-bar span {
+            display: flex;
+            flex-direction: row;
+
+            justify-content: center;
+
+            border-radius: .7rem 0 0 .7rem;
+            border-width: .1rem;
+            border-color: black;
+            border-style: solid;
+
+            
+            margin: 0px;
+            padding: 0;
+
+            width: 100%;
+            height: 2.15rem;
+            font-size: 1rem;
+
+            background-color: white;
+        }
+        .search-bar input {
+            width: 100%;
+            border: none;
+            border-radius: inherit;
+            margin: none;
+            font-family: monospace;
+
+            height: 2rem;
+        }
+        .search-bar button {
+            border-width: .1rem;
+            border-left-width: 0px;
+            padding: 0 .6rem;
+            margin: 0;
+            border-radius:  0 .7rem .7rem 0;
+
+            height: 2.15rem;
         }
 
         #wrap > nav {
@@ -139,6 +197,12 @@
         }
 
         @media screen and (max-width: 416px) {
+            #wrap > header > div {
+            display: flex;
+            align-items: center;
+
+            flex-direction: column;
+        }
             #wrap > nav > a {
                 padding: .5rem;
             }
@@ -153,6 +217,17 @@
         }
 
         @media screen and (min-width: 768px)  {
+            #wrap > header {
+                flex-direction: row;
+            }
+            #wrap > header > div {
+                flex-direction: row;
+            }
+            .search-bar {
+                margin-top: auto;
+                margin-left: auto;
+                width: 45vw;
+            }
             #wrap > main {
             flex-direction: row;
             }
@@ -176,19 +251,32 @@
                 margin-right: auto;
             }
         }
-
+        @media screen and (min-width: 990px)  {
+            #wrap > header h1 {
+                font-size: 4rem;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div id="wrap">
         <header>
-            <a href="/">
-                <img src="honey-logo.png" alt="sei lá é uma logo">
-            </a>
-            <a href="/">
-                <h1>Beebz Bee</h1>
-            </a>
+            <div>
+                <a href="/">
+                    <img src="honey-logo.png" alt="sei lá é uma logo">
+                </a>
+                <a href="/">
+                    <h1>Beebz Bee</h1>
+                </a>
+            </div>
+            <form class="search-bar" action="https://www.google.com/search" method="get">
+                <span>
+                    &nbsp;
+                    <input type="text" placeholder="Pesquisar no Google" name="q">
+                </span>
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
         </header>
         <nav>
             <a href="/"><span><i class="fa-solid fa-house"></i><span class="nbsp">&nbsp;</span>In&iacute;cio</span></a>
