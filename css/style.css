@@ -1,0 +1,291 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css);
+
+    :root {
+        --colors-background: #C2C1FF;
+        --colors-shadow    : #0044ff;
+        --colors-forgot    : #7F95FF;
+        --colors-highlight : #ffffff;
+        --colors-yellow    : #FFF200;
+        --colors-orange    : #FFC90E;
+        --colors-black     : #000000;
+    }
+
+    * {
+        box-sizing: border-box;
+        outline: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body {
+        font-family: monospace;
+        font-size: 16px;
+        height: 100%;
+    }
+
+    a {
+        color: red;
+        text-decoration: none;
+    }
+
+    body {
+        background-color: var(--colors-background);
+    }
+    #wrap {
+        display: flex;
+        flex-direction: column;
+
+        background-color: var(--colors-background);
+        border-radius: .1rem;
+
+        min-width: 320px;
+        height: 100%;
+        flex-grow: 1;
+
+        margin: auto;
+    }
+
+    /* HEADER */
+    #wrap > header {
+        display: flex;
+        align-items: center;
+
+        flex-direction: column;
+
+        background-color: var(--colors-orange);
+        border: .25rem solid var(--colors-yellow);
+        padding: 1rem;
+    }
+    #wrap > header > div {
+        display: flex;
+        align-items: center;
+
+        flex-direction: row;
+    }
+    #wrap > header img {
+        width: 6rem;
+        margin: 0 1rem 0 0;
+    }
+    #wrap > header h1 {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: var(--colors-shadow);
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    .search-bar {
+        display: flex;
+        flex-direction: row;
+        flex-shrink: 1;
+        width: 100%;
+        
+        justify-content: right;
+        
+    }
+
+    .search-bar span {
+        display: flex;
+        flex-direction: row;
+
+        justify-content: center;
+
+        border-radius: .7rem 0 0 .7rem;
+        border-width: .1rem;
+        border-color: var(--colors-black);
+        border-style: solid;
+
+        
+        margin: 0;
+        padding: 0;
+
+        width: 100%;
+        height: 2.15rem;
+        font-size: 1rem;
+
+        background-color: white;
+    }
+    .search-bar input {
+        border: none;
+        border-radius: inherit;
+
+        margin: none;
+
+        width: 100%;
+        height: 2rem;
+
+        font-family: monospace;
+    }
+    .search-bar button {
+        border-style: solid;
+        border-width: .1rem;
+        border-left-width: 0px;
+        border-radius:  0 .7rem .7rem 0;
+
+        padding: 0 .6rem;
+        margin: 0;
+    
+        height: 2.15rem;
+    }
+
+    /* NAV */
+    #wrap > nav {
+        display: flex;
+        flex-direction: row;
+
+        justify-content: center;
+
+        gap: .5rem;
+
+        background-color: var(--colors-shadow);
+        padding: .5rem;
+    }
+    #wrap > nav > a {
+        text-decoration: none;
+        
+        padding: .5rem;
+        border-radius: .4rem;
+
+        background-color: var(--colors-orange);
+        color: var(--colors-shadow);
+
+        width: 6.3rem;
+    }
+    #wrap > nav > a:hover {
+        transition: .2s;
+        background-color: var(--colors-yellow);
+        color: var(--colors-forgot);
+    }
+    #wrap > nav span {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    #wrap > nav span.nbsp {
+        display: inline;
+    }
+
+    /* MAIN */
+
+    #wrap > main {
+        display: flex;
+        flex-direction: column;
+
+        background-color: var(--colors-shadow);
+        flex-grow: 1;
+    }
+    #wrap > main > article {
+        background-color: var(--colors-yellow);
+        padding: 2rem;
+        flex-grow: 1;
+    }
+    #wrap > main > article > p {
+        margin-bottom: 1rem;
+    }
+    #wrap > main > aside {
+        background-color: var(--colors-orange);
+        padding: 1rem;
+
+        border: none;
+    }
+
+    /* FOOTER */
+    #wrap > footer {
+        display: flex;
+
+        align-items: center;
+        justify-content: space-around;
+
+        padding: .3rem;
+
+        font-size: 1rem;
+
+        color: var(--colors-orange);
+        background-color: var(--colors-shadow);
+    }
+    #wrap > footer i {
+        border-radius: 2rem;
+
+        padding: .4rem .1rem 1rem .1rem;
+
+        font-size: 1.6rem;
+        text-align: center;
+
+        width : 2.4rem;
+        height: 2.4rem;
+
+        color: var(--colors-shadow);
+        background-color: var(--colors-orange);
+    }
+
+    /* MEDIA QUERY */
+    @media screen and (max-width: 440px) {
+        #wrap > header > div {
+        display: flex;
+        align-items: center;
+
+        flex-direction: column;
+        }
+        #wrap > nav a {
+            padding: .5rem;
+            width: 5rem;
+        }
+        #wrap > nav span {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #wrap > nav span.nbsp {
+            display: none;
+        }
+        #wrap > nav i {
+            font-size: 1.2rem;
+        }
+    }
+
+    @media screen and (min-width: 768px)  {
+        #wrap {
+            border: .25rem solid var(--colors-yellow);
+        }
+        #wrap > header {
+            flex-direction: row;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+        }
+        #wrap > header > div {
+            flex-direction: row;
+        }
+        #wrap > header > .search-bar {
+            margin-top: auto;
+            margin-left: auto;
+            width: 45vw;
+        }
+        #wrap > main {
+        flex-direction: row;
+        }
+        #wrap > main > aside {
+            flex-basis: 220px;
+            flex-shrink: 0;
+        }
+        #wrap > main > aside {
+            border-width: .0rem .0rem .0rem .1rem;
+            border-style: solid;
+            border-color: var(--colors-forgot);
+            padding: 1rem;
+        }
+        #wrap > nav {
+            flex-direction: row;
+            justify-content: right;
+        }
+        #wrap > nav > a {
+            padding: .6rem;
+        }
+        #wrap > nav > a.second {
+            margin-right: auto;
+        }
+    }
+    @media screen and (min-width: 990px)  {
+        #wrap > header h1 {
+            font-size: 4rem;
+        }
+    }
